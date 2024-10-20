@@ -7,4 +7,11 @@ for (let i=0; i<16; i++){
     gridRow.setAttribute("class", "grid-row");
     gridRow.setAttribute("id", "grid-row-" + i);
     containerMain.appendChild(gridRow);
+
+    for (let j=0; j<16; j++){
+        const gridCell = document.createElement("div");
+        gridCell.setAttribute("class", "grid-element");
+        gridCell.setAttribute("id", "grid-element-" + (i * 16 + j));
+        gridRow.appendChild(gridCell);
+    }
 }
