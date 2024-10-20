@@ -13,5 +13,13 @@ for (let i=0; i<16; i++){
         gridCell.setAttribute("class", "grid-element");
         gridCell.setAttribute("id", "grid-element-" + (i * 16 + j));
         gridRow.appendChild(gridCell);
+
+        canvas = document.createElement("canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        gridCell.appendChild(canvas);
     }
 }
+
