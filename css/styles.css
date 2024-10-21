@@ -1,9 +1,14 @@
 .grid-row {
     display: flex;
+    justify-content: center;
 }
 
 .grid-element {
-    width: 4vw;
-    height: 4vw;
     border: 1px solid black;
+}
+
+#button-resize-div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vw;
 }
