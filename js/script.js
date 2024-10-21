@@ -15,6 +15,7 @@ for (let i=0; i<16; i++){
         gridRow.appendChild(gridCell);
 
         canvas = document.createElement("canvas");
+        canvas.setAttribute("id", "canvas-" + (i * 16 + j));
         canvas.style.width = "100%";
         canvas.style.height = "100%";
         canvas.width = canvas.offsetWidth;
@@ -23,3 +24,19 @@ for (let i=0; i<16; i++){
     }
 }
 
+containerMain.addEventListener("mousemove", (e) =>
+    {
+        if (e.target.nodeName == "CANVAS") {
+            drawCircle(e);
+    }
+}
+)
+
+function drawCircle(e) {
+    const canvasTarget = e.target;
+    const ctx = canvasTarget.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(e.pageX, e.pageY, 20, 0, 2 * Math.PI, false);
+    ctx.closePath();
+    ctx.stroke();
+}
